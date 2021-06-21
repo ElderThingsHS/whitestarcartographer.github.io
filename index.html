@@ -93,17 +93,17 @@
 					</tr>
 					<tr>
 						<td>WS Non-Warp Duration:</td>
-						<td><input type="number" id="input-nwtwday" onkeyup="wsTWPreBurnHrCalc()" onchange="wsTWPreBurnHrCalc()" value=0 min="0" max="2"></td>
-						<td>days</td>
 						<td><input type="number" id="input-nwtwhour" onkeyup="wsTWPreBurnHrCalc()" onchange="wsTWPreBurnHrCalc()" value=0 min="0"></td>
 						<td>hours</td>
+						<td><input type="number" id="input-nwtwmin" onkeyup="wsTWPreBurnHrCalc()" onchange="wsTWPreBurnHrCalc()" value=0 min="0" max="2"></td>
+						<td>mins</td>
 					</tr>
 					<tr>
 						<td>WS Time Warp Duration:</td>
-						<td><input type="number" id="input-twday" onkeyup="wsTWPreBurnHrCalc()" onchange="wsTWPreBurnHrCalc()" value=0 min="0" max="2"></td>
-						<td>days</td>
 						<td><input type="number" id="input-twhour" onkeyup="wsTWPreBurnHrCalc()" onchange="wsTWPreBurnHrCalc()" value=0 min="0"></td>
 						<td>hours</td>
+						<td><input type="number" id="input-twmin" onkeyup="wsTWPreBurnHrCalc()" onchange="wsTWPreBurnHrCalc()" value=0 min="0" max="2"></td>
+						<td>mins</td>
 					</tr>
 					<tr>
 						<td>Yellow Star Time Warp Time:</td>
@@ -505,35 +505,35 @@
 
 		  function wsTWPreBurnHrCalc()
 		  {
-			  var inday = document.getElementById("input-twday");
+			  var inmin = document.getElementById("input-twmin");
 			  var inhour = document.getElementById("input-twhour");
-			  var nwinday = document.getElementById("input-nwtwday");
+			  var nwinmin = document.getElementById("input-nwtwmin");
 			  var nwinhour = document.getElementById("input-nwtwhour");
   
-			  if (isNaN(inday.valueAsNumber))
+			  if (isNaN(inmin.valueAsNumber))
 			  {
-				  inday.value = 0;
+				  inmin.value = 0;
 			  }
 			  if (isNaN(inhour.valueAsNumber))
 			  {
 				  inhour.value = 0;
 			  }
-			  if (isNaN(nwinday.valueAsNumber))
+			  if (isNaN(nwinmin.valueAsNumber))
 			  {
-				  nwinday.value = 0;
+				  nwinmin.value = 0;
 			  }
 			  if (isNaN(nwinhour.valueAsNumber))
 			  {
 				  nwinhour.value = 0;
 			  }
   
-			  inday.value = inday.valueAsNumber;
+			  inmin.value = inmin.valueAsNumber;
 			  inhour.value = inhour.valueAsNumber;
-			  nwinday.value = nwinday.valueAsNumber;
+			  nwinmin.value = nwinmin.valueAsNumber;
 			  nwinhour.value = nwinhour.valueAsNumber;
-			  wsTWHr = inday.valueAsNumber * 24;
+			  wsTWHr = inmin.valueAsNumber / 60;
 			  wsTWHr += inhour.valueAsNumber;
-			  var nwWsTWHr = nwinday.valueAsNumber * 24;
+			  var nwWsTWHr = nwinmin.valueAsNumber / 60;
 			  nwWsTWHr += nwinhour.valueAsNumber;
 			  //wsShieldHr -= nwWsShieldHr;
   
