@@ -1,0 +1,187 @@
+/* ------------------------------ */
+/* Stylesheet for WS cartographer */
+/* ------------------------------ */
+
+html, body {
+    height: 100%;
+    //width: 100vw;
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+  }
+  table {
+    font-size: 12px;
+  }
+  
+  
+  /* ------------------------------ */
+  /* Banner header - logo + text -- */
+  /* ------------------------------ */
+  
+  #banner, #footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  #banner #logo, #footer #logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 12px;
+    filter: grayscale(1) brightness(2);
+  }
+  .bannerHeading {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  
+  /* ------------------------------ */
+  /* Instructions on first page --- */
+  /* ------------------------------ */
+  
+  #instructions {
+    text-align: center;
+  }
+  
+  
+  /* ------------------------------ */
+  /* General Calcs on 1st Page ---- */
+  /* ------------------------------ */
+  
+  #generalCalcs {
+    text-align: center;
+    margin-top: 20px;
+  }
+  #generalCalcs table {
+    margin: 0 auto;
+    text-align: left;
+  }
+  #generalCalcs td {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  #generalCalcs input {
+    width: 50px; /*was originally 30px */
+  }
+  #miningCalcFooter {
+    margin-top: 20px;
+  }
+  #miningCalcFooter input {
+    width: 50px!important;
+  }
+  #shieldCalcContainer, #miningCalcContainer, #twCalcContainer {
+    margin-bottom: 20px;
+  }
+  table #miningTable {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  /* ------------------------------ */
+  /* Map Overlays Formatting ------ */
+  /* ------------------------------ */
+  
+  /*
+  #miningCalcContainer input {
+    width: 30px;
+  }
+  */
+  
+  /* ------------------------------ */
+  /* General text formatting ------ */
+  /* ------------------------------ */
+  
+  p.header {
+    font-weight: bold;
+  }
+  p.center {
+    text-align: center;
+  }
+  
+  
+  
+  #map {
+    height: 100%;
+    //width: 100vw;
+    background-color: #1a1a1a;
+    color: black;
+  }
+  /* unvisited link */
+  a:link {
+    color: springgreen;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: springgreen;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: white;
+  }
+  
+  /* selected link */
+  a:active {
+    color: white;
+  }
+  #map{
+    height: 80%;
+  }
+  
+  
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: gray;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  .button1 {
+    background-color: gray;
+    color: white;
+    border: 2px solid #4CAF50;
+  }
+  
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .infobox {
+    padding: 6px 8px;
+    font: 12px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+  .infobox h4 {
+    margin: 0 0 5px;
+    color: #777;
+  }
+  
+  .mininginfobox {
+    padding: 6px 8px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: white;
+    background: rgba(25,25,25,0.8);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    border-radius: 5px;
+  }
+  
