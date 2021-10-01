@@ -141,8 +141,8 @@
 				  <!--
 				  Miner Level: <input type="number" id="input-minerLevel" onkeyup="minerLevelUpdate()" onchange="minerLevelUpdate()" value=0 min="0" max="6" style="width: 2.75em;"/>
 				  Mining Boost: <input type="number" id="input-miningBoost" onkeyup="miningBoostUpdate()" onchange="miningBoostUpdate()" value=0 min="0" max="12" style="width: 2.75em;"/><br>
-				  Remote Mining: <input type="number" id="input-remoteMining" onkeyup="remoteMiningUpdate()" onchange="remoteMiningUpdate()" value=0 min="0" max="12" style="width: 2.75em;"/>
-				  Mining Unity: <input type="number" id="input-miningUnity" onkeyup="miningUnityUpdate()" onchange="miningUnityUpdate()" value=0 min="0" max="12" style="width: 2.75em;"/><br>-->
+				  Remote Mining: <input type="number" id="input-remoteMining" onkeyup="remoteMiningUpdate()" onchange="remoteMiningUpdate()" value=0 min="0" max="10" style="width: 2.75em;"/>
+				  Mining Unity: <input type="number" id="input-miningUnity" onkeyup="miningUnityUpdate()" onchange="miningUnityUpdate()" value=0 min="0" max="10" style="width: 2.75em;"/><br>-->
 			  </div>
 			  <div id='miningCalcFooter'>
 				  <p class='header'>Mining Results:</p>
@@ -207,7 +207,7 @@
 		  var ysShieldMaxDurationMinute = 5;
 		  var weaponTPRangeCalc = false;
 		  var minerLevelhpm = [0, 6, 7.5, 12, 24, 60, 80];
-		  var miningBoostMultiplier = [1, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8];
+		  var miningBoostMultiplier = [1, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10];
 		  var remoteMiningMultipler = [0, 0.36, 0.4, 0.45, 0.51, 0.57, 0.64, 0.72, 0.81, 0.9, 1]
 		  var miningUnityMultiplier = [0, 0.25, 0.29, 0.34, 0.39, 0.45, 0.52, 0.61, 0.71, 0.83, 1]
   
@@ -389,7 +389,7 @@
 				  inputUnityLevel.setAttribute("onchange", "miningUnityUpdate(" + minerIndex + ")");
 				  inputUnityLevel.value = hMiningUnity[minerIndex];
 				  inputUnityLevel.min = "0";
-				  inputUnityLevel.max = "12";
+				  inputUnityLevel.max = "10";
   
 				  cell1.innerHTML = "Miner #" + minerIndex;
 				  cell2.innerHTML = "Level";
