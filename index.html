@@ -41,6 +41,7 @@
 	  <div id='instructions'>
 		  <p id='info'></p>
 		  <button id='uploadbtn' class="button button1">Select White Star Screenshot or Ctrl-V to paste</button>
+		  <button id='pastebtn' class="button button1">Tap to paste</button>
 	  </div>
 	  <div id='map' style='display: none'>
 		  <img id='origimg' style='display:none' src='' />
@@ -611,6 +612,35 @@
 			  };
   
 			  document.getElementById('uploadbtn').addEventListener('click', OpenFileDialog, false);
+			  document.getElementById('pastebtn').addEventListener("click", async clickEvent => {
+				let items = await navigator.clipboard.read();
+				for (let item of items) {
+					console.log(item.types);
+					if (!item.types.includes('image/png'))
+						continue;
+
+					clipboardBlob = await item.getType('image/png');
+					if(clipboardBlob){
+							  var origimg = document.getElementById('origimg');
+							  origimg.src = URL.createObjectURL(clipboardBlob);
+							  processImage();
+					}
+					break;
+				}
+			  });
+
+			  navigator.permissions.query({ name: "clipboard-read" }).then((result) => {
+				// If permission to read the clipboard is granted or if the user will
+				// be prompted to allow it, we proceed.
+
+				if (result.state != "granted" && result.state != "prompt") {
+					document.getElementById('pastebtn').style.display = "none";
+				}
+			  })
+			  .catch(err => {
+				document.getElementById('pastebtn').style.display = "none";
+			  });
+			  
   
 			  // ability to paste image instead of upload
 			  window.addEventListener("paste", function(e){
@@ -821,6 +851,7 @@
 			  document.getElementById('banner').style.display = "none";
 			  document.getElementById('map').style.display = "";
 			  document.getElementById('uploadbtn').style.display = "none";
+			  document.getElementById('pastebtn').style.display = "none";
 			  //document.getElementById('generalCalcs').style.display = "none";
 			  //document.getElementById('shieldCalcContainer').style.display = "none";
 			  //document.getElementById('shieldCalcTW').style.display = "none";
