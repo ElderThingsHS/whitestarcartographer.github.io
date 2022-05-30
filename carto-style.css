@@ -23,7 +23,7 @@ html, body {
   /* Banner header - logo + text -- */
   /* ------------------------------ */
   
-  #banner, #footer {
+  #refreshButton, #banner, #footer {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
