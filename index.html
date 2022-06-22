@@ -363,16 +363,20 @@
   
   
 			  for (i = 0; i < hMiningAllies + 1; i++) {
-				  var row = miningTable.insertRow(i);
+				  var row = miningTable.insertRow(i*3);
 				  var cell1 = row.insertCell(0);
 				  var cell2 = row.insertCell(1);
 				  var cell3 = row.insertCell(2);
 				  var cell4 = row.insertCell(3);
 				  var cell5 = row.insertCell(4);
-				  var cell6 = row.insertCell(5);
-				  var cell7 = row.insertCell(6);
-				  var cell8 = row.insertCell(7);
-				  var cell9 = row.insertCell(8);
+				  var row2 = miningTable.insertRow(i*3+1);
+				  var cell5a = row2.insertCell(0);
+				  var cell6 = row2.insertCell(1);
+				  var cell7 = row2.insertCell(2);
+				  var cell8 = row2.insertCell(3);
+				  var cell9 = row2.insertCell(4);
+				  var row3 = miningTable.insertRow(i*3+2);
+				  var cell9a = row3.insertCell(0);
 				  var minerIndex = i+1;
   
 				  var inputMinerLevel = document.createElement("input");
