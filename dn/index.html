@@ -51,7 +51,7 @@
   <body onload="bodyOnLoad()">
 	  <div id='refreshButton'>
 		<button onClick="window.location.href=window.location.href" class="button button1">New Map</button>
-		<a href="../hs/index.html">
+		<a href="../index.html">
 			<button class="button button1">DN Mode</button>
 		</a>
 	  </div>
@@ -77,7 +77,7 @@
 				  <table>
 					  <tr>
 						  <td>Time Warp Level:</td>
-						  <td><input type="number" id="input-twShield" onkeyup="twShieldUpdate()" onchange="twShieldUpdate()" value=0 min="0" max="12"></td>
+						  <td><input type="number" id="input-twShield" onkeyup="twShieldUpdate()" onchange="twShieldUpdate()" value=0 min="0" max="15"></td>
 					  </tr>
 					  <tr>
 						  <td>WS Non-Warp Duration:</td>
@@ -111,7 +111,7 @@
 				<table>
 					<tr>
 						<td>Time Warp Level:</td>
-						<td><input type="number" id="input-twPreBurn" onkeyup="twPreBurnUpdate()" onchange="twPreBurnUpdate()" value=0 min="0" max="12"></td>
+						<td><input type="number" id="input-twPreBurn" onkeyup="twPreBurnUpdate()" onchange="twPreBurnUpdate()" value=0 min="0" max="15"></td>
 					</tr>
 					<tr>
 						<td>WS Non-Warp Duration:</td>
@@ -143,7 +143,7 @@
 				  <table>
 					  <tr>
 						  <td>Time Warp Level:</td>
-						  <td><input type="number" id="input-twMining" onkeyup="twMiningUpdate()" onchange="twMiningUpdate()" value=0 min="0" max="12"></td>
+						  <td><input type="number" id="input-twMining" onkeyup="twMiningUpdate()" onchange="twMiningUpdate()" value=0 min="0" max="15"></td>
 					  </tr>
 					  <tr>
 						  <td>Hydro Amount:</td>
@@ -155,14 +155,14 @@
 					  </tr>
 					  <tr>
 						  <td># of Miners:</td>
-						  <td><input type="number" id="input-miningAllies" onkeyup="miningAlliesUpdate()" onchange="miningAlliesUpdate()" value=1 min="1" max="12"></td>
+						  <td><input type="number" id="input-miningAllies" onkeyup="miningAlliesUpdate()" onchange="miningAlliesUpdate()" value=1 min="1" max="15"></td>
 					  </tr>
 				  </table>
 			  </div>
 			  <div id='miningCalc'>
 				  <!--
 				  Miner Level: <input type="number" id="input-minerLevel" onkeyup="minerLevelUpdate()" onchange="minerLevelUpdate()" value=0 min="0" max="6" style="width: 2.75em;"/>
-				  Mining Boost: <input type="number" id="input-miningBoost" onkeyup="miningBoostUpdate()" onchange="miningBoostUpdate()" value=0 min="0" max="12" style="width: 2.75em;"/><br>
+				  Mining Boost: <input type="number" id="input-miningBoost" onkeyup="miningBoostUpdate()" onchange="miningBoostUpdate()" value=0 min="0" max="15" style="width: 2.75em;"/><br>
 				  Remote Mining: <input type="number" id="input-remoteMining" onkeyup="remoteMiningUpdate()" onchange="remoteMiningUpdate()" value=0 min="0" max="10" style="width: 2.75em;"/>
 				  Mining Unity: <input type="number" id="input-miningUnity" onkeyup="miningUnityUpdate()" onchange="miningUnityUpdate()" value=0 min="0" max="10" style="width: 2.75em;"/><br>-->
 			  </div>
@@ -217,12 +217,12 @@
 		  var hMiningUnity = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   
 		  // mods multipliers
-		  var twMultiplier = [1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.2, 2.4, 2.6];
-		  var deltaMultiplier = [1, 1.06, 1.1, 1.14, 1.18, 1.22, 1.26, 1.3, 1.33, 1.36, 1.4, 1.45, 1.5];
-		  var tpDistance = [0, 300, 330, 360, 400, 440, 485, 535, 580, 650, 700, 750, 800];
-		  var tpTimeSeconds = 4*60*60;
-		  var impulseMultiplier = 4;
-		  var impulseSeconds = [0, 30*60, 37*60, 45*60, 52*60, 60*60, 67*60, 75*60, 86*60, 97*60, 112*60, 130*60, 150*60];
+		  //var twMultiplier = [1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.2, 2.4, 2.6];
+		  var deltaMultiplier = [1, 1.06, 1.1, 1.14, 1.18, 1.22, 1.26, 1.3, 1.33, 1.36, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65];
+		  var tpDistance = [0, 400, 436, 475.2, 517.9, 564.5, 615.3, 670.6, 730.9, 796.6, 870, 945, 1030, 1125, 1225, 1330];
+		  var tpTimeSeconds = (8*60*60) + (10*60);
+		  var impulseMultiplier = 20;
+		  var impulseSeconds = [0, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60];
 		  var wsShieldMaxDurationHour = 50;
 		  var wsTWMaxDurationMins = 20*60;
 		  var ysTWMaxDurationMins = 2;
@@ -237,12 +237,13 @@
 		  var weaponsRange = 120;
   
 		  //vessel speeds in au per second
-		  var minerspeed = 43.2/3600;
-		  var tsspeed = 57.6/3600;
-		  var bsspeed = 60/3600;
-		  var alpharocketspeed = 132/3600;
-		  var deltarocketspeed = 150/3600;
-		  var omegarocketspeed = 60/3600;
+		  var wsSlowdownFactor = 840.0;
+		  var minerspeed = 432/(wsSlowdownFactor*60);
+		  var tsspeed = 576/(wsSlowdownFactor*60);
+		  var bsspeed = 600/(wsSlowdownFactor*60);
+		  var alpharocketspeed = 1080/(wsSlowdownFactor*60);
+		  var deltarocketspeed = 1500/(wsSlowdownFactor*60);
+		  var omegarocketspeed = 600/(wsSlowdownFactor*60);
   
 		  var ResetPoints = function()
 		  {
@@ -353,8 +354,8 @@
 			  {
 				  hMiningAllies = 0;
 			  }
-			  if (hMiningAllies > 12) {
-				  hMiningAllies = 12;
+			  if (hMiningAllies > 15) {
+				  hMiningAllies = 15;
 			  }
 			  wsMiningHrCalc();
 			  document.getElementById("miningCalc").innerHTML = "";
@@ -397,7 +398,7 @@
 				  inputBoostLevel.setAttribute("onchange", "miningBoostUpdate(" + minerIndex + ")");
 				  inputBoostLevel.value = hMiningBoost[minerIndex];
 				  inputBoostLevel.min = "0";
-				  inputBoostLevel.max = "12";
+				  inputBoostLevel.max = "15";
   
 				  var inputRemoteLevel = document.createElement("input");
 				  inputRemoteLevel.type = "number";
@@ -948,10 +949,10 @@
 				  "Each sector should be 500AU diagonally.<br>" +
 				  "Tap map to add waypoints to measure.<br>" +
 				  "<a href='#' onclick=ResetPoints()>Click HERE to Reset Waypoints.</a><br>"+
-				  "TW: <input type='number' id='input-tw' onkeyup='twUpdate()' onchange='twUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/>" +
-				  "Delta: <input type='number' id='input-delta' onkeyup='deltaUpdate()' onchange='deltaUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/>" +
-				  "TP: <input type='number' id='input-tp' onkeyup='tpUpdate()' onchange='tpUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/>" +
-				  "Impulse: <input type='number' id='input-impulse' onkeyup='impulseUpdate()' onchange='impulseUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/><br>" +
+				  "TW: <input type='number' id='input-tw' onkeyup='twUpdate()' onchange='twUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/>" +
+				  "Delta: <input type='number' id='input-delta' onkeyup='deltaUpdate()' onchange='deltaUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/>" +
+				  "TP: <input type='number' id='input-tp' onkeyup='tpUpdate()' onchange='tpUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/>" +
+				  "Impulse: <input type='number' id='input-impulse' onkeyup='impulseUpdate()' onchange='impulseUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/><br>" +
 				  "<input type='checkbox' id='weapon-tp-range-checkbox' value='Value1' onclick='weaponTPRange()' onchange='weaponTPRange()' />" +
 				  "Weapons / TP Range";
 				  //<br><a href='#' onclick=timewarpLevel()>Time Warp [0].</a> <a href='#' onclick=deltaLevel()>Delta [0].</a> <a href='#' onclick=teleportLevel()>Teleport [0].</a> <a href='#' onclick=impulseLevel()>Impulse [0].</a>
