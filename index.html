@@ -641,7 +641,7 @@
 			  document.getElementById('pastebtn').addEventListener("click", async clickEvent => {
 				let items = await navigator.clipboard.read();
 				for (let item of items) {
-					console.log(item.types);
+					//console.log(item.types);
 					if (!item.types.includes('image/png'))
 						continue;
 
@@ -857,7 +857,7 @@
 				  distTS = distTS - tsDistanceCovered;
 				  distMS = distMS - msDistanceCovered;
 			  }
-			  console.log(distBS);
+			  //console.log(distBS);
 			  document.getElementById('info2').innerHTML += "<b>): </b><br>";
 			  document.getElementById('info2').innerHTML += "Battleship - "+secondsToHms(distBS/bsspeedCalc+tpTimeSecondsCalc+bsImpulseSecondsCalc)+"<br>";
 			  if(!weaponTPRangeCalc)
