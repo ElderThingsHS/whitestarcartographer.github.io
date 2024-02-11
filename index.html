@@ -593,7 +593,7 @@
 			  var i;
 			  var hRequired = 0;
 			  for (var i = generatedRelics.valueAsNumber+1; i < targetRelics.valueAsNumber+1; i++) {
-				if (i > pRelics.length) {
+				if (i > pRelics.length-1) {
 					hRequired += pRelics[0];
 				} else {
 					hRequired += pRelics[i];
