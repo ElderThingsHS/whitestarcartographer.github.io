@@ -76,7 +76,7 @@ html, body {
   #miningCalcFooter input {
     width: 50px!important;
   }
-  #shieldCalcContainer, #miningCalcContainer, #twCalcContainer {
+  #shieldCalcContainer, #miningCalcContainer, #hPlanetContainer {
     margin-bottom: 20px;
   }
   table #miningTable {

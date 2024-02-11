@@ -52,7 +52,7 @@
 	  <div id='refreshButton'>
 		<button onClick="window.location.href=window.location.href" class="button button1">New Map</button>
 		<a href="../index.html">
-			<button class="button button1">DN Mode</button>
+			<button class="button button1">HS Mode</button>
 		</a>
 	  </div>
 	  <div id='banner'>
@@ -75,10 +75,10 @@
 			  </div>
 			  <div id='shieldCalc'>
 				  <table>
-					  <!--<tr>
+					  <tr>
 						  <td>Time Warp Level:</td>
-						  <td><input type="number" id="input-twShield" onkeyup="twShieldUpdate()" onchange="twShieldUpdate()" value=0 min="0" max="15"></td>
-					  </tr>-->
+						  <td><input type="number" id="input-twShield" onkeyup="twShieldUpdate()" onchange="twShieldUpdate()" value=0 min="0" max="12"></td>
+					  </tr>
 					  <tr>
 						  <td>WS Non-Warp Duration:</td>
 						  <td><input type="number" id="input-nwday" onkeyup="wsShieldHrCalc()" onchange="wsShieldHrCalc()" value=0 min="0" max="2"></td>
@@ -86,13 +86,13 @@
 						  <td><input type="number" id="input-nwhour" onkeyup="wsShieldHrCalc()" onchange="wsShieldHrCalc()" value=0 min="0"></td>
 						  <td>hours</td>
 					  </tr>
-					  <!--<tr>
+					  <tr>
 						  <td>WS Time Warp Duration:</td>
 						  <td><input type="number" id="input-day" onkeyup="wsShieldHrCalc()" onchange="wsShieldHrCalc()" value=0 min="0" max="2"></td>
 						  <td>days</td>
 						  <td><input type="number" id="input-hour" onkeyup="wsShieldHrCalc()" onchange="wsShieldHrCalc()" value=0 min="0"></td>
 						  <td>hours</td>
-					  </tr>-->
+					  </tr>
 					  <tr>
 						  <td>Yellow Star Shield Time:</td>
 						  <td><input type="text" id="output-min" maxlength="2" value=0 readonly></td>
@@ -103,7 +103,7 @@
 				  </table>
 			  </div>
 		  </div>
-		  <!--<div id='twCalcContainer'>
+		  <div id='twCalcContainer'>
 			<div id='twCalcHeading'>
 				<p class='header'>Time Warp Duration Calculator</p>
 			</div>
@@ -111,7 +111,7 @@
 				<table>
 					<tr>
 						<td>Time Warp Level:</td>
-						<td><input type="number" id="input-twPreBurn" onkeyup="twPreBurnUpdate()" onchange="twPreBurnUpdate()" value=0 min="0" max="15"></td>
+						<td><input type="number" id="input-twPreBurn" onkeyup="twPreBurnUpdate()" onchange="twPreBurnUpdate()" value=0 min="0" max="12"></td>
 					</tr>
 					<tr>
 						<td>WS Non-Warp Duration:</td>
@@ -136,15 +136,15 @@
 					</tr>
 				</table>
 			</div>
-		</div>-->
+		</div>
 		  <div id='miningCalcContainer'>
 			  <div id='miningCalcHeading' style="word-wrap: break-word;">
 				  <p class='header'>Mining Speed Calculator</p>
 				  <table>
-					  <!--<tr>
+					  <tr>
 						  <td>Time Warp Level:</td>
-						  <td><input type="number" id="input-twMining" onkeyup="twMiningUpdate()" onchange="twMiningUpdate()" value=0 min="0" max="15"></td>
-					  </tr>-->
+						  <td><input type="number" id="input-twMining" onkeyup="twMiningUpdate()" onchange="twMiningUpdate()" value=0 min="0" max="12"></td>
+					  </tr>
 					  <tr>
 						  <td>Hydro Amount:</td>
 						  <td><input type="number" id="input-hAmount" onkeyup="hMiningUpdate()" onchange="hMiningUpdate()" value=0 min="0" max="9999"></td>
@@ -155,14 +155,14 @@
 					  </tr>
 					  <tr>
 						  <td># of Miners:</td>
-						  <td><input type="number" id="input-miningAllies" onkeyup="miningAlliesUpdate()" onchange="miningAlliesUpdate()" value=1 min="1" max="15"></td>
+						  <td><input type="number" id="input-miningAllies" onkeyup="miningAlliesUpdate()" onchange="miningAlliesUpdate()" value=1 min="1" max="12"></td>
 					  </tr>
 				  </table>
 			  </div>
 			  <div id='miningCalc'>
 				  <!--
 				  Miner Level: <input type="number" id="input-minerLevel" onkeyup="minerLevelUpdate()" onchange="minerLevelUpdate()" value=0 min="0" max="6" style="width: 2.75em;"/>
-				  Mining Boost: <input type="number" id="input-miningBoost" onkeyup="miningBoostUpdate()" onchange="miningBoostUpdate()" value=0 min="0" max="15" style="width: 2.75em;"/><br>
+				  Mining Boost: <input type="number" id="input-miningBoost" onkeyup="miningBoostUpdate()" onchange="miningBoostUpdate()" value=0 min="0" max="12" style="width: 2.75em;"/><br>
 				  Remote Mining: <input type="number" id="input-remoteMining" onkeyup="remoteMiningUpdate()" onchange="remoteMiningUpdate()" value=0 min="0" max="10" style="width: 2.75em;"/>
 				  Mining Unity: <input type="number" id="input-miningUnity" onkeyup="miningUnityUpdate()" onchange="miningUnityUpdate()" value=0 min="0" max="10" style="width: 2.75em;"/><br>-->
 			  </div>
@@ -217,34 +217,33 @@
 		  var hMiningUnity = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   
 		  // mods multipliers
-		  //var twMultiplier = [1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.2, 2.4, 2.6];
-		  var deltaMultiplier = [1, 1.06, 1.1, 1.14, 1.18, 1.22, 1.26, 1.3, 1.33, 1.36, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65];
-		  var tpDistance = [0, 400, 436, 475.2, 517.9, 564.5, 615.3, 670.6, 730.9, 796.6, 870, 945, 1030, 1125, 1225, 1330];
-		  var tpTimeSeconds = (8*60*60) + (10*60);
-		  var impulseMultiplier = 20;
-		  var impulseSeconds = [0, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60, 112*60];
-		  var wsShieldMaxDurationHour = 56;
-		  //var wsTWMaxDurationMins = 20*60;
-		  //var ysTWMaxDurationMins = 2;
+		  var twMultiplier = [1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.2, 2.4, 2.6];
+		  var deltaMultiplier = [1, 1.06, 1.1, 1.14, 1.18, 1.22, 1.26, 1.3, 1.33, 1.36, 1.4, 1.45, 1.5];
+		  var tpDistance = [0, 300, 330, 360, 400, 440, 485, 535, 580, 650, 700, 750, 800];
+		  var tpTimeSeconds = 4*60*60;
+		  var impulseMultiplier = 4;
+		  var impulseSeconds = [0, 30*60, 37*60, 45*60, 52*60, 60*60, 67*60, 75*60, 86*60, 97*60, 112*60, 130*60, 150*60];
+		  var wsShieldMaxDurationHour = 50;
+		  var wsTWMaxDurationMins = 20*60;
+		  var ysTWMaxDurationMins = 2;
 		  var ysShieldMaxDurationMinute = 5;
 		  var weaponTPRangeCalc = false;
-		  var minerLevelhpm = [0, 36.1, 45.1, 72.3, 146.3, 352.9, 500.0, 545.5];
-		  var miningBoostMultiplier = [1, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 8, 9, 10, 11, 12, 13];
-		  var remoteMiningMultipler = [0, 0.36, 0.4, 0.45, 0.51, 0.57, 0.64, 0.72, 0.81, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5];
-		  //var miningUnityMultiplier = [0, 0.25, 0.29, 0.34, 0.39, 0.45, 0.52, 0.61, 0.71, 0.83, 1];
+		  var minerLevelhpm = [0, 6, 7.5, 12, 24, 60, 80];
+		  var miningBoostMultiplier = [1, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10];
+		  var remoteMiningMultipler = [0, 0.36, 0.4, 0.45, 0.51, 0.57, 0.64, 0.72, 0.81, 0.9, 1]
+		  var miningUnityMultiplier = [0, 0.25, 0.29, 0.34, 0.39, 0.45, 0.52, 0.61, 0.71, 0.83, 1]
   
 		  //weapons range for battleships
 		  var weaponsRange = 120;
   
 		  //vessel speeds in au per second
-		  var wsSlowdownFactor = 840.0;
-		  var minerspeed = 30.0/3600;
-		  var tsspeed = 41.0/3600;
-		  var bsspeed = 42.0/3600;
-		  var rdrone = 30.0/3600;
-		  var alpharocketspeed = 1080/(wsSlowdownFactor*60);
+		  var wsSlowdownFactor = 600.0;
+		  var minerspeed = 432/(wsSlowdownFactor*60);
+		  var tsspeed = 576/(wsSlowdownFactor*60);
+		  var bsspeed = 600/(wsSlowdownFactor*60);
+		  var alpharocketspeed = 1320/(wsSlowdownFactor*60);
 		  var deltarocketspeed = 1500/(wsSlowdownFactor*60);
-		  var omegarocketspeed = 42.0/3600;
+		  var omegarocketspeed = 600/(wsSlowdownFactor*60);
   
 		  var ResetPoints = function()
 		  {
@@ -316,23 +315,23 @@
 			  return input.valueAsNumber;
 		  }
   
-		  /*function twShieldUpdate()
+		  function twShieldUpdate()
 		  {
 			  twlvlShield = inUpdate(document.getElementById("input-twShield"));
 			  wsShieldHrCalc();
-		  }*/
+		  }
 
-		  /*function twPreBurnUpdate()
+		  function twPreBurnUpdate()
 		  {
 			  twlvlPreBurn = inUpdate(document.getElementById("input-twPreBurn"));
 			  wsTWPreBurnHrCalc();
-		  }*/
+		  }
   
-		  /*function twMiningUpdate()
+		  function twMiningUpdate()
 		  {
 			  twlvlMining = inUpdate(document.getElementById("input-twMining"));
 			  wsMiningHrCalc();
-		  }*/
+		  }
   
 		  function hMiningUpdate()
 		  {
@@ -355,8 +354,8 @@
 			  {
 				  hMiningAllies = 0;
 			  }
-			  if (hMiningAllies > 15) {
-				  hMiningAllies = 15;
+			  if (hMiningAllies > 12) {
+				  hMiningAllies = 12;
 			  }
 			  wsMiningHrCalc();
 			  document.getElementById("miningCalc").innerHTML = "";
@@ -367,14 +366,20 @@
   
   
 			  for (i = 0; i < hMiningAllies + 1; i++) {
-				  var row = miningTable.insertRow(i);
+				  var row = miningTable.insertRow(i*3);
 				  var cell1 = row.insertCell(0);
 				  var cell2 = row.insertCell(1);
 				  var cell3 = row.insertCell(2);
 				  var cell4 = row.insertCell(3);
 				  var cell5 = row.insertCell(4);
-				  var cell6 = row.insertCell(5);
-				  var cell7 = row.insertCell(6);
+				  var row2 = miningTable.insertRow(i*3+1);
+				  var cell5a = row2.insertCell(0); //empty cell
+				  var cell6 = row2.insertCell(1);
+				  var cell7 = row2.insertCell(2);
+				  var cell8 = row2.insertCell(3);
+				  var cell9 = row2.insertCell(4);
+				  var row3 = miningTable.insertRow(i*3+2); //empty row
+				  var cell9a = row3.insertCell(0); //empty row
 				  var minerIndex = i+1;
   
 				  var inputMinerLevel = document.createElement("input");
@@ -384,7 +389,7 @@
 				  inputMinerLevel.setAttribute("onchange", "minerLevelUpdate(" + minerIndex + ")");
 				  inputMinerLevel.value = hMiningLevel[minerIndex];
 				  inputMinerLevel.min = "1";
-				  inputMinerLevel.max = "7";
+				  inputMinerLevel.max = "6";
   
 				  var inputBoostLevel = document.createElement("input");
 				  inputBoostLevel.type = "number";
@@ -393,7 +398,7 @@
 				  inputBoostLevel.setAttribute("onchange", "miningBoostUpdate(" + minerIndex + ")");
 				  inputBoostLevel.value = hMiningBoost[minerIndex];
 				  inputBoostLevel.min = "0";
-				  inputBoostLevel.max = "15";
+				  inputBoostLevel.max = "12";
   
 				  var inputRemoteLevel = document.createElement("input");
 				  inputRemoteLevel.type = "number";
@@ -402,16 +407,16 @@
 				  inputRemoteLevel.setAttribute("onchange", "remoteMiningUpdate(" + minerIndex + ")");
 				  inputRemoteLevel.value = hMiningRemote[minerIndex];
 				  inputRemoteLevel.min = "0";
-				  inputRemoteLevel.max = "15";
+				  inputRemoteLevel.max = "10";
   
-				  /*var inputUnityLevel = document.createElement("input");
+				  var inputUnityLevel = document.createElement("input");
 				  inputUnityLevel.type = "number";
 				  inputUnityLevel.setAttribute("id", "input-miningUnity" + minerIndex);
 				  inputUnityLevel.setAttribute("onkeyup", "miningUnityUpdate(" + minerIndex + ")");
 				  inputUnityLevel.setAttribute("onchange", "miningUnityUpdate(" + minerIndex + ")");
 				  inputUnityLevel.value = hMiningUnity[minerIndex];
 				  inputUnityLevel.min = "0";
-				  inputUnityLevel.max = "10";*/
+				  inputUnityLevel.max = "10";
   
 				  cell1.innerHTML = "Miner #" + minerIndex;
 				  cell2.innerHTML = "Level";
@@ -420,8 +425,8 @@
 				  cell5.appendChild(inputBoostLevel);
 				  cell6.innerHTML = "Remote";
 				  cell7.appendChild(inputRemoteLevel);
-				  /*cell8.innerHTML = "Unity";
-				  cell9.appendChild(inputUnityLevel);*/
+				  cell8.innerHTML = "Unity";
+				  cell9.appendChild(inputUnityLevel);
   
 			  }
 		  }
@@ -444,17 +449,17 @@
 			  wsMiningHrCalc();
 		  }
   
-		  /*function miningUnityUpdate(input)
+		  function miningUnityUpdate(input)
 		  {
 			  hMiningUnity[input] = inUpdate(document.getElementById("input-miningUnity" + input));
 			  wsMiningHrCalc();
-		  }*/
+		  }
   
-		  /*function twUpdate()
+		  function twUpdate()
 		  {
 			  twlvl = inUpdate(document.getElementById("input-tw"));
 			  updateMapPopup();
-		  }*/
+		  }
   
 		  function tpUpdate()
 		  {
@@ -482,19 +487,19 @@
   
 		  function wsShieldHrCalc()
 		  {
-			  //var inday = document.getElementById("input-day");
-			  //var inhour = document.getElementById("input-hour");
+			  var inday = document.getElementById("input-day");
+			  var inhour = document.getElementById("input-hour");
 			  var nwinday = document.getElementById("input-nwday");
 			  var nwinhour = document.getElementById("input-nwhour");
   
-			  /*if (isNaN(inday.valueAsNumber))
+			  if (isNaN(inday.valueAsNumber))
 			  {
 				  inday.value = 0;
 			  }
 			  if (isNaN(inhour.valueAsNumber))
 			  {
 				  inhour.value = 0;
-			  }*/
+			  }
 			  if (isNaN(nwinday.valueAsNumber))
 			  {
 				  nwinday.value = 0;
@@ -504,22 +509,20 @@
 				  nwinhour.value = 0;
 			  }
   
-			  //inday.value = inday.valueAsNumber;
-			  //inhour.value = inhour.valueAsNumber;
+			  inday.value = inday.valueAsNumber;
+			  inhour.value = inhour.valueAsNumber;
 			  nwinday.value = nwinday.valueAsNumber;
 			  nwinhour.value = nwinhour.valueAsNumber;
-			  //wsShieldHr = inday.valueAsNumber * 24;
-			  //wsShieldHr += inhour.valueAsNumber;
+			  wsShieldHr = inday.valueAsNumber * 24;
+			  wsShieldHr += inhour.valueAsNumber;
 			  var nwWsShieldHr = nwinday.valueAsNumber * 24;
 			  nwWsShieldHr += nwinhour.valueAsNumber;
 			  //wsShieldHr -= nwWsShieldHr;
   
 			  // ratio is multiplied by 1000 to avoid IEEE 754 Floating Point number issue where 1/3 can't be represented properly.
-			  //var ratio = wsShieldHr / wsShieldMaxDurationHour * twMultiplier[twlvlShield] * 1000;
-			  //var ratio = wsShieldHr / wsShieldMaxDurationHour * 1000;
+			  var ratio = wsShieldHr / wsShieldMaxDurationHour * twMultiplier[twlvlShield] * 1000;
 			  var nwRatio = nwWsShieldHr / wsShieldMaxDurationHour * 1000;
-			  //var ysMin = ysShieldMaxDurationMinute * ratio / 1000;
-			  var ysMin = 0;
+			  var ysMin = ysShieldMaxDurationMinute * ratio / 1000;
 			  ysMin += ysShieldMaxDurationMinute * nwRatio / 1000;
 			  var outsec = (ysMin - Math.floor(ysMin)) * 60;
   
@@ -527,7 +530,7 @@
 			  document.getElementById("output-sec").value = outsec.toFixed(0);
 		  }
 
-		  /*function wsTWPreBurnHrCalc()
+		  function wsTWPreBurnHrCalc()
 		  {
 			  var inmin = document.getElementById("input-twmin");
 			  var inhour = document.getElementById("input-twhour");
@@ -568,7 +571,7 @@
   
 			  document.getElementById("output-twmin").value = Math.floor(ysMin);
 			  document.getElementById("output-twsec").value = outsec.toFixed(0);
-		  }*/
+		  }
   
 		  function wsMiningHrCalc()
 		  {
@@ -578,11 +581,11 @@
   
 			  for (i = 1; i < hMiningAllies + 2; i++)
 			  {
-				  //miningRShpm += twMultiplier[twlvlMining] *                                        //TW multiplier
-				  miningRShpm += minerLevelhpm[hMiningLevel[i]] *                                  //Miner Level
+				  miningRShpm += twMultiplier[twlvlMining] *                                        //TW multiplier
+				  minerLevelhpm[hMiningLevel[i]] *                                  //Miner Level
 				  miningBoostMultiplier[hMiningBoost[i]] *                          //Mining Boost multiplier
-				  (remoteMiningMultipler[hMiningRemote[i]] * hMiningCount);// *        //Remote Mining multiplier * asteroid count
-				  //(miningUnityMultiplier[hMiningUnity[i]] * hMiningAllies + 1);     //Mining Unity multiplier * # of miningAllies
+				  (remoteMiningMultipler[hMiningRemote[i]] * hMiningCount) *        //Remote Mining multiplier * asteroid count
+				  (miningUnityMultiplier[hMiningUnity[i]] * hMiningAllies + 1);     //Mining Unity multiplier * # of miningAllies
 			  }
   
 			  // 1 min RS = 10 hr WS
@@ -783,19 +786,18 @@
 				  document.getElementById('info2').innerHTML += "<b>Time to Weapons / TP Range ( </b>";
 			  }
   
-			  //if(twlvl == 0 && tplvl == 0 && deltalvl == 0 && impulselvl == 0)
-			  if(tplvl == 0 && deltalvl == 0 && impulselvl == 0)
+			  if(twlvl == 0 && tplvl == 0 && deltalvl == 0 && impulselvl == 0)
 			  {
 				  document.getElementById('info2').innerHTML += "<b>without mods </b>";
 			  }
   
-			  /*if(twlvl > 0)
+			  if(twlvl > 0)
 			  {
 				  document.getElementById('info2').innerHTML += "<b>TW ["+twlvl+"] </b>";
 				  minerspeedCalc *= twMultiplier[twlvl];
 				  tsspeedCalc *= twMultiplier[twlvl];
 				  bsspeedCalc *= twMultiplier[twlvl];
-			  }*/
+			  }
   
 			  if(tplvl > 0)
 			  {
@@ -809,8 +811,7 @@
 				  distMS = distBS;
 				  if(!weaponTPRangeCalc)
 				  {
-					  //tpTimeSecondsCalc = tpTimeSeconds/twMultiplier[twlvl];
-					  tpTimeSecondsCalc = tpTimeSeconds;
+					  tpTimeSecondsCalc = tpTimeSeconds/twMultiplier[twlvl];
 				  }
 			  }
   
@@ -825,8 +826,7 @@
 			  if(impulselvl > 0)
 			  {
 				  document.getElementById('info2').innerHTML += "<b>Impulse ["+impulselvl+"] </b>";
-				  //impulseSecondsCalc = impulseSeconds[impulselvl]/twMultiplier[twlvl];
-				  impulseSecondsCalc = impulseSeconds[impulselvl];
+				  impulseSecondsCalc = impulseSeconds[impulselvl]/twMultiplier[twlvl];
 				  var msDistanceCovered = minerspeedCalc*impulseSecondsCalc*impulseMultiplier;
 				  var tsDistanceCovered = tsspeedCalc*impulseSecondsCalc*impulseMultiplier;
 				  var bsDistanceCovered = bsspeedCalc*impulseSecondsCalc*impulseMultiplier;
@@ -949,10 +949,10 @@
 				  "Each sector should be 500AU diagonally.<br>" +
 				  "Tap map to add waypoints to measure.<br>" +
 				  "<a href='#' onclick=ResetPoints()>Click HERE to Reset Waypoints.</a><br>"+
-				  //"TW: <input type='number' id='input-tw' onkeyup='twUpdate()' onchange='twUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/>" +
-				  "Delta: <input type='number' id='input-delta' onkeyup='deltaUpdate()' onchange='deltaUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/>" +
-				  "TP: <input type='number' id='input-tp' onkeyup='tpUpdate()' onchange='tpUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/>" +
-				  "Impulse: <input type='number' id='input-impulse' onkeyup='impulseUpdate()' onchange='impulseUpdate()' value=0 min='0' max='15' style='width: 3.75em;'/><br>" +
+				  "TW: <input type='number' id='input-tw' onkeyup='twUpdate()' onchange='twUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/>" +
+				  "Delta: <input type='number' id='input-delta' onkeyup='deltaUpdate()' onchange='deltaUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/>" +
+				  "TP: <input type='number' id='input-tp' onkeyup='tpUpdate()' onchange='tpUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/>" +
+				  "Impulse: <input type='number' id='input-impulse' onkeyup='impulseUpdate()' onchange='impulseUpdate()' value=0 min='0' max='12' style='width: 3.75em;'/><br>" +
 				  "<input type='checkbox' id='weapon-tp-range-checkbox' value='Value1' onclick='weaponTPRange()' onchange='weaponTPRange()' />" +
 				  "Weapons / TP Range";
 				  //<br><a href='#' onclick=timewarpLevel()>Time Warp [0].</a> <a href='#' onclick=deltaLevel()>Delta [0].</a> <a href='#' onclick=teleportLevel()>Teleport [0].</a> <a href='#' onclick=impulseLevel()>Impulse [0].</a>
